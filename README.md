@@ -1,2 +1,81 @@
-# CodeAlpha-Phishing-Awareness
-A responsive and interactive webpage for Phishing Awareness Training, created as a task for the CodeAlpha internship
+# 🎣 Phishing Awareness Hub 🛡️
+
+### _A Professional & Interactive Guide to Cybersecurity Awareness_
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+> **"Knowledge is the greatest weapon."** This website is designed to provide in-depth knowledge about phishing attacks. This project is a part of the CodeAlpha internship.
+
+<br>
+
+## 🌐 Live Demo
+
+**[Check out the live website here!](https://your-github-username.github.io/your-repository-name/)** 👈
+
+_(Note: Update this link after deploying your project to GitHub Pages.)_
+
+<br>
+
+## 📜 Table of Contents
+
+- [🎯 About The Project](#-about-the-project)
+- [✨ Key Features](#-key-features)
+- [🚀 Built With](#-built-with)
+- [🔧 Getting Started](#-getting-started)
+- [👨‍💻 Author](#-author)
+
+<br>
+
+## 🎯 About The Project
+
+The **Phishing Awareness Hub** is a fully responsive and interactive web project that educates users about the dangers of phishing. It provides detailed information on the types of phishing, the psychology behind them, and effective prevention methods. The engaging design and animations make the learning experience enjoyable.
+
+<img width="1728" height="927" alt="image" src="https://github.com/user-attachments/assets/94884dbc-20b9-481e-8405-d096501b9cb6" />
+
+---
+<img width="1654" height="845" alt="image" src="https://github.com/user-attachments/assets/749c6bfd-4c8a-4835-8a69-06bc6ab4c94b" />
+
+
+<br>
+
+## ✨ Key Features
+
+* 📚 **In-depth Content:** Detailed and easy-to-understand sections on every aspect of phishing.
+* 🧠 **15-Question Quiz:** A challenging quiz to test your knowledge.
+* 🎨 **Modern Design:** A clean and professional UI/UX that engages the user.
+* 📱 **Fully Responsive:** Looks great on desktops, tablets, and mobile phones.
+* ✨ **Engaging Animations:** Beautiful scroll animations created using the AOS (Animate on Scroll) library.
+* 👤 **Author Section:** A special section to introduce the creator of the project.
+
+<br>
+
+## 🚀 Built With
+
+This project was built using the following technologies:
+
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+* **AOS Library** - For beautiful scroll animations.
+
+<br>
+
+## 🔧 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+1.  Clone the repository or download the ZIP file.
+    ```sh
+   [ git clone [https://github.com/your-github-username/your-repository-name.git](https://github.com/your-github-username/your-repository-name.git)](https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/tree/main)
+    ```
+2.  Open the `project.html` file in your favorite browser.
+3.  That's it! Your website is up and running. 🥳
+
+<br>
+
+## 👨‍💻 Author
+
+**Rushikesh Gadekar**
+---
