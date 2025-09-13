@@ -10,14 +10,6 @@
 
 <br>
 
-## 🌐 Live Demo
-
-**[Check out the live website here!](https://your-github-username.github.io/your-repository-name/)** 👈
-
-_(Note: Update this link after deploying your project to GitHub Pages.)_
-
-<br>
-
 ## 📜 Table of Contents
 
 - [🎯 About The Project](#-about-the-project)
@@ -68,7 +60,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repository or download the ZIP file.
     ```sh
-   [ git clone [https://github.com/your-github-username/your-repository-name.git](https://github.com/your-github-username/your-repository-name.git)](https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/tree/main)
+  https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/tree/main
     ```
 2.  Open the `project.html` file in your favorite browser.
 3.  That's it! Your website is up and running. 🥳
