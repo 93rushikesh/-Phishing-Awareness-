@@ -59,8 +59,8 @@ This project was built using the following technologies:
 To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repository or download the ZIP file.
-    ```https://github.com/93rushikesh/-Phishing-Awareness-/blob/main/-Phishing-Awareness.html
-    ```
+   ### https://github.com/93rushikesh/-Phishing-Awareness-/blob/main/-Phishing-Awareness.html
+   
 2.  Open the `project.html` file in your favorite browser.
 3.  That's it! Your website is up and running. 🥳
 
