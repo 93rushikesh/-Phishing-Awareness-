@@ -60,7 +60,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repository or download the ZIP file.
     ```sh
- [ https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/tree/main](https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/blob/main/CodeAlphaPhising.html)
+ [ https://github.com/93rushikesh/CodeAlpha-Phishing-Awareness/tree/main](https://github.com/93rushikesh/-Phishing-Awareness/blob/main/CodeAlphaPhising.html)
     ```
 2.  Open the `project.html` file in your favorite browser.
 3.  That's it! Your website is up and running. 🥳
