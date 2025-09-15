@@ -6,7 +6,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-> **"Knowledge is the greatest weapon."** This website is designed to provide in-depth knowledge about phishing attacks. This project is a part of the CodeAlpha internship.
+> **"Knowledge is the greatest weapon."** This website is designed to provide in-depth knowledge about phishing attacks.
 
 <br>
 
