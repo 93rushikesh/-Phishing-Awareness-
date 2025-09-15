@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Phishing Awareness Hub</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0052D4;
+            --secondary-color: #4364F7;
+            --accent-color: #6FB1FC;
+            --background-color: #f0f2f5;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 200% 200%;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            position: relative;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .typing-effect {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline-block;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            overflow: hidden;
+            animation:
+                typing 3.5s steps(40, end) infinite,
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: orange; }
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            margin-bottom: 2.5rem;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            border-bottom: 4px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #f9faff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card h3 { margin-top: 0; color: var(--primary-color); }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .icon-item .icon { font-size: 3rem; color: var(--secondary-color); }
+        .icon-item h4 { margin: 10px 0 5px 0; color: var(--primary-color); }
+
+        .step-guide { counter-reset: step; }
+        .step-guide .step {
+            position: relative;
+            padding: 1rem 1rem 1rem 3.5rem;
+            margin-bottom: 1rem;
+            background: #f9faff;
+            border-radius: 8px;
+        }
+        .step-guide .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        .author-section { text-align: center; }
+        .author-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .author-section .social-links a {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        .author-section .social-links a:hover { transform: scale(1.2); }
+
+        #quiz-container { background: #f9faff; padding: 2rem; border-radius: 15px; }
+        .quiz-question { margin-bottom: 1.5rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
+        .quiz-question p { font-weight: 600; font-size: 1.1rem; }
+        .quiz-question label { display: block; margin-bottom: 0.5rem; cursor: pointer; padding: 12px; border-radius: 8px; transition: background-color 0.2s; border: 1px solid #eee; }
+        .quiz-question label:hover { background-color: #e3edff; }
+        input[type="radio"] { margin-right: 10px; }
+
+        button {
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 2rem auto 0 auto;
+            box-shadow: 0 5px 15px rgba(67, 100, 247, 0.4);
+        }
+
+        button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(67, 100, 247, 0.6); }
+
+        #quiz-result {
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎣 Phishing Awareness Hub</h1>
+        <p class="typing-effect">Stay Cyber Smart. Stay Safe.</p>
+    </header>
+
+    <main>
+        <section id="intro" data-aos="fade-up">
+            <h2>What Exactly is Phishing?</h2>
+            <p>Phishing is a fraudulent attempt to obtain sensitive information such as usernames, passwords, and credit card details by disguising as a trustworthy entity in an electronic communication. Attackers use deceptive emails, websites, and text messages to trick recipients into revealing their personal and financial data. It's one of the oldest and most effective forms of cyber attack.</p>
+        </section>
+
+        <section id="types" data-aos="fade-up">
+            <h2>In-Depth: Types of Phishing Attacks</h2>
+            <div class="icon-grid">
+                <div class="icon-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon">📧</div>
+                    <h4>Email Phishing</h4>
+                    <p>The most common type, where attackers send thousands of generic emails hoping a few people will bite.</p>
+                </div>
+                <div class="icon-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon">🎯</div>
+                    <h4>Spear Phishing</h4>
+                    <p>A targeted attack aimed at a specific individual or organization, using personalized information to seem legitimate.</p>
+                </div>
+                <div class="icon-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon">🐋</div>
+                    <h4>Whaling</h4>
+                    <p>A type of spear phishing aimed specifically at senior executives and other high-profile targets within a business.</p>
+                </div>
+                <div class="icon-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon">📱</div>
+                    <h4>Smishing</h4>
+                    <p>Phishing conducted via SMS text messages. These often contain urgent-looking links or requests.</p>
+                </div>
+                <div class="icon-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon">📞</div>
+                    <h4>Vishing</h4>
+                    <p>Voice phishing, where attackers use phone calls (often automated) to trick people into giving information.</p>
+                </div>
+                 <div class="icon-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon">🔗</div>
+                    <h4>Angler Phishing</h4>
+                    <p>Occurs on social media, where attackers impersonate a company's customer service account to intercept user queries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recognize" data-aos="fade-up">
+            <h2>How to Spot a Phishing Attempt?</h2>
+            <div class="card-container">
+                <div class="card" data-aos="fade-right"><h3>🚨 Sense of Urgency or Fear</h3><p>Threats of account closure or offers that are too good to be true create panic.</p></div>
+                <div class="card" data-aos="fade-left"><h3>✍️ Poor Grammar & Spelling</h3><p>Legitimate companies proofread their communications carefully.</p></div>
+                <div class="card" data-aos="fade-right"><h3>🔗 Suspicious Links & Attachments</h3><p>Hover over links to see the real destination. Never open unexpected attachments.</p></div>
+                <div class="card" data-aos="fade-left"><h3>👤 Mismatched Email Domains</h3><p>The sender's email address doesn't match the company's official domain (e.g., `support@microsoft.help.com`).</p></div>
+                <div class="card" data-aos="fade-right"><h3>💰 Requests for Sensitive Information</h3><p>Legitimate organizations will never ask for your password or full credit card number via email.</p></div>
+                <div class="card" data-aos="fade-left"><h3>👋 Generic Greetings</h3><p>Emails starting with "Dear Valued Customer" instead of your actual name are a red flag.</p></div>
+            </div>
+        </section>
+
+        <section id="psychology" data-aos="fade-up">
+            <h2>The Psychology: Why Do We Fall for Phishing?</h2>
+            <p>Phishing attacks are successful because they exploit human psychology. Attackers manipulate our natural emotional responses:</p>
+            <ul>
+                <li data-aos="fade-right" data-aos-delay="100"><strong>Fear:</strong> "Your account has been compromised!" makes us act without thinking.</li>
+                <li data-aos="fade-right" data-aos-delay="200"><strong>Greed:</strong> "You have won a $1,000,000 lottery!" tempts us to click.</li>
+                <li data-aos="fade-right" data-aos-delay="300"><strong>Curiosity:</strong> "See who viewed your profile" piques our interest.</li>
+                <li data-aos="fade-right" data-aos-delay="400"><strong>Urgency:</strong> "This offer expires in one hour!" pressures us into quick decisions.</li>
+                <li data-aos="fade-right" data-aos-delay="500"><strong>Helpfulness:</strong> "Help us verify your account details" makes us feel like we are assisting.</li>
+            </ul>
+        </section>
+        
+        <section id="aftermath" data-aos="fade-up">
+            <h2>What to Do If You've Been Phished?</h2>
+            <p>If you suspect you've fallen victim to a phishing scam, act immediately:</p>
+            <div class="step-guide">
+                <div class="step" data-aos="slide-up"><strong>Disconnect:</strong> Immediately disconnect your device from the internet to prevent further malware spread.</div>
+                <div class="step" data-aos="slide-up"><strong>Change Passwords:</strong> Change the password for the compromised account and any other accounts that use the same password.</div>
+                <div class="step" data-aos="slide-up"><strong>Contact Your Bank:</strong> If financial information was shared, contact your bank or credit card company to report the fraud and block transactions.</div>
+                <div class="step" data-aos="slide-up"><strong>Scan Your Device:</strong> Run a full scan with a reputable antivirus program to check for malware.</div>
+                <div class="step" data-aos="slide-up"><strong>Report It:</strong> Report the phishing attempt to the company that was impersonated and to relevant authorities.</div>
+            </div>
+        </section>
+
+        <section id="quiz" data-aos="fade-up">
+            <h2>Test Your Phishing IQ! (15 Questions)</h2>
+            <div id="quiz-container"></div>
+            <button id="submit-quiz">Submit Answers</button>
+            <p id="quiz-result"></p>
+        </section>
+
+        <section id="author" class="author-section" data-aos="fade-up">
+            <h2>About the Author</h2>
+            <img src="data:image/png;base64,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" alt="Author's Photo">
+            <h3>Rushikesh gadekar</h3>
+            <p>A passionate cybersecurity enthusiast and developer dedicated to making the digital world a safer place. This project was created as part of the CodeAlpha internship program.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Advanced Cybersecurity Awareness Project | Created for CodeAlpha Internship</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+            });
+
+            const quizContainer = document.getElementById('quiz-container');
+            const submitButton = document.getElementById('submit-quiz');
+            const quizResult = document.getElementById('quiz-result');
+
+            const quizQuestions = [
+                { question: "1. What is the main goal of a phishing attack?", options: ["To install a virus", "To steal sensitive information", "To crash your computer", "To sell you a product"], correctAnswer: "To steal sensitive information" },
+                { question: "2. An email from your CEO asks for an urgent transfer of money. This could be an example of:", options: ["Smishing", "Whaling", "Vishing", "Malware"], correctAnswer: "Whaling" },
+                { question: "3. The term 'Smishing' refers to phishing attacks conducted via:", options: ["Email", "Social Media", "SMS (Text Messages)", "Phone Calls"], correctAnswer: "SMS (Text Messages)" },
+                { question: "4. Hovering your mouse over a link in a suspicious email is a good practice because:", options: ["It automatically scans the link for viruses", "It shows you the actual destination URL", "It clicks the link safely", "It deletes the email"], correctAnswer: "It shows you the actual destination URL" },
+                { question: "5. Which of these is the most secure password?", options: ["12345678", "Password123", "MyDogFido", "J#kP!8s@v$2q"], correctAnswer: "J#kP!8s@v$2q" },
+                { question: "6. What does the 'S' in 'HTTPS' stand for?", options: ["Special", "Software", "Secure", "System"], correctAnswer: "Secure" },
+                { question: "7. You receive a text message with a link to claim a prize. What should you do?", options: ["Click the link immediately", "Reply to the message", "Delete the message and block the number", "Forward it to friends"], correctAnswer: "Delete the message and block the number" },
+                { question: "8. 'Vishing' is a phishing attack carried out through:", options: ["Voice calls", "Video messages", "Website pop-ups", "Email attachments"], correctAnswer: "Voice calls" },
+                { question: "9. Phishing attacks often exploit human emotions like:", options: ["Fear and Greed", "Joy and Surprise", "Sadness and Boredom", "All of the above"], correctAnswer: "Fear and Greed" },
+                { question: "10. What is Two-Factor Authentication (2FA)?", options: ["Two different passwords", "An extra layer of security besides your password", "A physical key to your computer", "A virus scanner"], correctAnswer: "An extra layer of security besides your password" },
+                { question: "11. An attacker impersonating a company's customer service on Twitter is called:", options: ["Spear Phishing", "Whaling", "Angler Phishing", "Smishing"], correctAnswer: "Angler Phishing" },
+                { question: "12. What is the first thing you should do if you suspect you've been phished?", options: ["Restart your computer", "Continue working as normal", "Change your passwords", "Call your friend"], correctAnswer: "Change your passwords" },
+                { question: "13. A public Wi-Fi network (e.g., at a cafe) is generally:", options: ["More secure than your home network", "Less secure than your home network", "Equally secure as your home network", "Encrypted by default"], correctAnswer: "Less secure than your home network" },
+                { question: "14. A 'generic greeting' like 'Dear User' in an email is a red flag because:", options: ["It's too formal", "Legitimate companies usually address you by your name", "It's a spelling mistake", "It's too friendly"], correctAnswer: "Legitimate companies usually address you by your name" },
+                { question: "15. Is it safe to enter your login details on a website that starts with 'http://' instead of 'https://'?", options: ["Yes, it is always safe", "No, it is not secure as the data is not encrypted", "It depends on the website", "Only if it has a padlock icon"], correctAnswer: "No, it is not secure as the data is not encrypted" }
+            ];
+
+            function buildQuiz() {
+                quizQuestions.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.classList.add('quiz-question');
+                    let optionsHTML = '';
+                    q.options.forEach(option => {
+                        optionsHTML += `<label><input type="radio" name="question${index}" value="${option}">${option}</label>`;
+                    });
+                    questionDiv.innerHTML = `<p>${q.question}</p>${optionsHTML}`;
+                    quizContainer.appendChild(questionDiv);
+                });
+            }
+
+            function showResults() {
+                let score = 0;
+                quizQuestions.forEach((q, index) => {
+                    const userAnswer = (document.querySelector(`input[name="question${index}"]:checked`) || {}).value;
+                    if (userAnswer === q.correctAnswer) {
+                        score++;
+                    }
+                });
+                const percentage = Math.round((score / quizQuestions.length) * 100);
+                quizResult.innerHTML = `Your Score: ${score} out of ${quizQuestions.length} (${percentage}%)`;
+                if (percentage >= 80) {
+                    quizResult.style.color = 'white';
+                    quizResult.style.backgroundColor = 'var(--success-color)';
+                } else {
+                    quizResult.style.color = 'white';
+                    quizResult.style.backgroundColor = 'var(--danger-color)';
+                }
+            }
+
+            buildQuiz();
+            submitButton.addEventListener('click', showResults);
+        });
+    </script>
+</body>
+</html>
